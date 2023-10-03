@@ -28,7 +28,7 @@ async function initMap(pos) {
 
   const geocoder = new google.maps.Geocoder();
   geocoder
-  .geocode({ location: latlng })
+  .geocode({ location: position })
   .then((response) => {
     if (response.results[0]) {
      
