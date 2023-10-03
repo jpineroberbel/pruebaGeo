@@ -24,6 +24,24 @@ async function initMap(pos) {
     position: position,
     title: "Uluru",
   });
+
+
+  const geocoder = new google.maps.Geocoder();
+  geocoder
+  .geocode({ location: latlng })
+  .then((response) => {
+    if (response.results[0]) {
+     
+
+     
+
+      console.log(response.results[0].formatted_address);
+      
+    } else {
+      window.alert("No results found");
+    }
+  })
+  .catch((e) => window.alert("Geocoder failed due to: " + e));
 }
 
 navigator.geolocation.getCurrentPosition(initMap);
